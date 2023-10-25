@@ -15,6 +15,7 @@ data class Record(
     val verified: Boolean,
     val emailVisibility: Boolean,
     val email: String,
+    val description: String,
     val created: String,
     val updated: String,
     val name: String,
