@@ -8,6 +8,7 @@
     <color name="primaryLight">#D7F1DB</color>
     <color name="bodyBg">#191919</color>
     <color name="cardBg">#29292A</color>
+    <color name="bg_warning">#BFFFBF00</color>
 
     <color name="cardBorder">#80EFEFEF</color>
     <color name="cardBorderText">#7A7A7A</color>
