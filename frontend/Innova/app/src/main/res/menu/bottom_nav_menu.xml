@@ -8,10 +8,10 @@
         android:title="Project"
         android:id="@+id/project"
         android:icon="@drawable/baseline_format_list_bulleted_24"/>
-    <item
-        android:title="Add"
-        android:id="@+id/add"
-        android:icon="@drawable/baseline_add_circle_24"/>
+<!--    <item-->
+<!--        android:title="Add"-->
+<!--        android:id="@+id/add"-->
+<!--        android:icon="@drawable/baseline_add_circle_24"/>-->
     <item
         android:title="Work"
         android:id="@+id/work"
