@@ -1,11 +1,12 @@
-package com.example.invest
+package com.example.invest.Adapter
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.invest.R
 
-class MainActivity : AppCompatActivity() {
+class SignIn : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_sign_in)
     }
 }
