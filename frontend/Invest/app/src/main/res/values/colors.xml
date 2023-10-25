@@ -2,4 +2,16 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="primary">#146735</color>
+    <color name="primaryLight">#D7F1DB</color>
+    <color name="bodyBg">#191919</color>
+    <color name="cardBg">#29292A</color>
+    <color name="bg_warning">#BFFFBF00</color>
+
+    <color name="cardBorder">#80EFEFEF</color>
+    <color name="cardBorderText">#7A7A7A</color>
+    <color name="bg_danger">#FF6262</color>
+
+    <color name="material_outline">#DEDEDE</color>
+    <color name="banner_color">#E07346</color>
 </resources>
