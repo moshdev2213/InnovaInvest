@@ -1,5 +1,15 @@
 <resources>
     <string name="app_name">Innova</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string-array name="pro_category">
+        <item>HealthTech Innovators</item>
+        <item>DataNinja Analytics</item>
+        <item>VR Xperience</item>
+        <item>GameChanger Studios</item>
+        <item>TechSavvy Edu</item>
+        <item>CyberGuard Solutions</item>
+        <item>Fintech Pioneers</item>
+        <item>Ecommerce Evolution</item>
+    </string-array>
+
 </resources>
