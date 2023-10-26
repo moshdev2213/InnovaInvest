@@ -13,11 +13,11 @@ import androidx.annotation.RequiresApi
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.charmrides.RetrofitService.RetrofitService
-import com.example.fitme.DialogAlerts.ProgressLoader
 import com.example.innova.Activity.ProjectDetail
 import com.example.innova.Adapter.ProjectsAdapter
 import com.example.innova.ApiService.ProjectService
 import com.example.innova.DialogAlerts.ApiProgress
+import com.example.innova.EntityRes.ProjTotalBudget
 import com.example.innova.EntityRes.ProjectItem
 import com.example.innova.EntityRes.ProjectsRes
 import com.example.innova.EntityRes.UserRecord
@@ -88,6 +88,8 @@ class ProjectFragment : Fragment() {
                         println(response.body())
                         val mealRes = response.body()
                         val mealItem = mealRes?.items
+
+                        getProjTotBudById()
                         projectsAdapter.setList(mealItem!!)
                         rvReportFrag.visibility=View.VISIBLE
                         textView22.visibility = View.GONE
@@ -108,6 +110,49 @@ class ProjectFragment : Fragment() {
                 Toast.makeText(requireContext(),"Server Error", Toast.LENGTH_SHORT).show()
                 textView22.visibility = View.VISIBLE
                 apiProgress.dismissProgressLoader()
+            }
+        })
+    }
+    private fun getProjTotBudById() {
+//        val filterValue = "(forProject.id=\"$id\")"
+        val expand = "forProject.budget,forProject.id"
+        val fields = "budget,forProject"
+
+        val retrofitService= RetrofitService()
+        val getList =retrofitService.getRetrofit().create(ProjectService::class.java)
+        val call: Call<ProjTotalBudget> = getList.getProjTotBudById(expand,fields)
+
+        call.enqueue(object : Callback<ProjTotalBudget> {
+            override fun onResponse(call: Call<ProjTotalBudget>, response: Response<ProjTotalBudget>) {
+                if(response.isSuccessful){
+                    if (response.body()!=null){
+                        println(response.body())
+                        val mealRes = response.body()
+                        val mealItem = mealRes?.items
+
+//                        val keyValuePairs = mealItem?.map { item ->
+//                            Pair(item.forProject,item.budget)
+//                        }
+                        // Assuming mealItem is a list of your data items
+                        val groupedItems = mealItem?.groupBy { it.forProject }
+
+                        val keyValuePairs = groupedItems?.map { (project, items) ->
+                            val totalBudget = items.sumOf { it.budget }
+                            Pair(project, totalBudget)
+                        }
+
+                        if (keyValuePairs != null) {
+                            projectsAdapter.setKeyValuePairs(keyValuePairs)
+                        }
+                    }else{
+                        Toast.makeText(requireContext(),"Empty Data", Toast.LENGTH_SHORT).show()
+                    }
+                }else{
+                    Toast.makeText(requireContext(),"Invalid response", Toast.LENGTH_SHORT).show()
+                }
+            }
+            override fun onFailure(call: Call<ProjTotalBudget>, t: Throwable) {
+                Toast.makeText(requireContext(),"Server Error", Toast.LENGTH_SHORT).show()
             }
         })
     }
