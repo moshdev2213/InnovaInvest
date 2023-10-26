@@ -7,14 +7,17 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
 import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.charmrides.RetrofitService.RetrofitService
+import com.example.fitme.DialogAlerts.ProgressLoader
 import com.example.innova.Activity.ProjectDetail
 import com.example.innova.Adapter.ProjectsAdapter
 import com.example.innova.ApiService.ProjectService
+import com.example.innova.DialogAlerts.ApiProgress
 import com.example.innova.EntityRes.ProjectItem
 import com.example.innova.EntityRes.ProjectsRes
 import com.example.innova.EntityRes.UserRecord
@@ -26,9 +29,10 @@ import retrofit2.Response
 
 class ProjectFragment : Fragment() {
     private lateinit var rvReportFrag: RecyclerView
+    private lateinit var textView22: TextView
     private lateinit var projectsAdapter:ProjectsAdapter
     private lateinit var out: UserRecord
-
+    private lateinit var apiProgress: ApiProgress
     @RequiresApi(Build.VERSION_CODES.TIRAMISU)
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -44,15 +48,20 @@ class ProjectFragment : Fragment() {
     }
     private fun initRecycler(view:View){
         rvReportFrag = view.findViewById(R.id.rvBusFrag)
+        textView22 = view.findViewById(R.id.textView22)
+
         rvReportFrag.layoutManager= LinearLayoutManager(requireActivity())
         projectsAdapter = ProjectsAdapter ({
-                projectItem: ProjectItem -> busCardClicked(projectItem)
+                projectItem: ProjectItem -> projCardClicked(projectItem)
         },requireContext() )
         rvReportFrag.adapter = projectsAdapter
         fetchDetails()
+
+        textView22.visibility = View.GONE
+        rvReportFrag.visibility = View.GONE
     }
 
-    private fun busCardClicked(projectItem: ProjectItem) {
+    private fun projCardClicked(projectItem: ProjectItem) {
         val bundle = Bundle()
         bundle.putSerializable("user", out)
         bundle.putSerializable("project", projectItem)
@@ -62,8 +71,11 @@ class ProjectFragment : Fragment() {
         startActivity(intent)
     }
     private fun fetchDetails() {
+        apiProgress = ApiProgress(requireContext())
+        apiProgress.startProgressLoader()
+
         val emailToFilter: String = out.record.email
-        val filterValue = "(userEmail=\"$emailToFilter\")"
+        val filterValue = "(email!=\"$emailToFilter\")"
 
         val retrofitService= RetrofitService()
         val getList =retrofitService.getRetrofit().create(ProjectService::class.java)
@@ -73,16 +85,29 @@ class ProjectFragment : Fragment() {
             override fun onResponse(call: Call<ProjectsRes>, response: Response<ProjectsRes>) {
                 if(response.isSuccessful){
                     if (response.body()!=null){
+                        println(response.body())
                         val mealRes = response.body()
                         val mealItem = mealRes?.items
                         projectsAdapter.setList(mealItem!!)
+                        rvReportFrag.visibility=View.VISIBLE
+                        textView22.visibility = View.GONE
+                        apiProgress.dismissProgressLoader()
+                    }else{
+                        Toast.makeText(requireContext(),"Empty Data", Toast.LENGTH_SHORT).show()
+                        textView22.visibility = View.VISIBLE
+                        apiProgress.dismissProgressLoader()
                     }
+
                 }else{
                     Toast.makeText(requireContext(),"Invalid response", Toast.LENGTH_SHORT).show()
+                    textView22.visibility = View.VISIBLE
+                    apiProgress.dismissProgressLoader()
                 }
             }
             override fun onFailure(call: Call<ProjectsRes>, t: Throwable) {
                 Toast.makeText(requireContext(),"Server Error", Toast.LENGTH_SHORT).show()
+                textView22.visibility = View.VISIBLE
+                apiProgress.dismissProgressLoader()
             }
         })
     }
