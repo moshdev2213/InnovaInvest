@@ -11,11 +11,14 @@
         android:fullBackupContent="@xml/backup_rules"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:usesCleartextTraffic="true"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Innova"
+        android:usesCleartextTraffic="true"
         tools:targetApi="31">
+        <activity
+            android:name=".Activity.AllProjDetails"
+            android:exported="false" />
         <activity
             android:name=".Activity.MyProporsals"
             android:exported="false" />
@@ -42,7 +45,7 @@
             android:exported="false" />
         <activity
             android:name=".Activity.SignIn"
-            android:exported="true" >
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -54,9 +57,7 @@
             android:exported="false" />
         <activity
             android:name=".Activity.Home"
-            android:exported="true">
-
-        </activity>
+            android:exported="true"></activity>
 
         <meta-data
             android:name="preloaded_fonts"
