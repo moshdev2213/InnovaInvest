@@ -7,7 +7,7 @@ import android.graphics.drawable.ColorDrawable
 import android.view.Window
 import android.widget.ProgressBar
 import android.widget.TextView
-import com.example.charmrides.R
+import com.example.innova.R
 
 class ProgressLoader(
     private val context: Context,

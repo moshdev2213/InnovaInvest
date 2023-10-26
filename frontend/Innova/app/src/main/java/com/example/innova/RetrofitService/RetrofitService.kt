@@ -22,7 +22,7 @@ class RetrofitService {
             .build()
 
         return Retrofit.Builder()
-            .baseUrl("https://charm-ride.pockethost.io")
+            .baseUrl("https://lets-connect.pockethost.io")
             .addConverterFactory(GsonConverterFactory.create(Gson()))
             .client(okHttpClient)
             .build()
