@@ -1,5 +1,6 @@
 package com.example.innova.ApiService
 
+import com.example.innova.EntityRes.ProjTotalBudget
 import com.example.innova.EntityRes.ProjectsRes
 import retrofit2.Call
 import retrofit2.http.GET
@@ -10,4 +11,11 @@ interface ProjectService {
     fun getProjNotUser(
         @Query("filter")filter : String
     ): Call<ProjectsRes>
+
+    @GET("/api/collections/proposal/records")
+    fun getProjTotBudById(
+        @Query("expand") expand: String,
+        @Query("fields") fields: String
+//        @Query("filter") filter: String
+        ): Call<ProjTotalBudget>
 }
