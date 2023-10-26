@@ -147,41 +147,20 @@
             android:layout_height="wrap_content">
 
             <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/textInputLayout09"
-                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:layout_marginEnd="16dp"
-                android:hint="Timeline"
-                app:endIconMode="clear_text"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintHorizontal_chainStyle="spread_inside"
-                app:layout_constraintStart_toEndOf="@+id/textInputLayout11"
-                app:layout_constraintTop_toBottomOf="@+id/textInputLayout06">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:inputType="text" />
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/textInputLayout11"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
                 android:layout_marginEnd="16dp"
                 android:hint="Budget"
                 app:endIconMode="clear_text"
-                app:layout_constraintBottom_toBottomOf="@+id/textInputLayout09"
-                app:layout_constraintEnd_toStartOf="@+id/textInputLayout09"
+                app:layout_constraintEnd_toStartOf="@+id/spinnerSeatSelect2"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintHorizontal_chainStyle="spread_inside"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/textInputLayout09">
+                app:layout_constraintTop_toBottomOf="@+id/textInputLayout06">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
@@ -202,6 +181,19 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/imageView34" />
 
+            <Spinner
+                android:id="@+id/spinnerSeatSelect2"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginEnd="16dp"
+                android:background="@drawable/dropdown_background_outline"
+                android:entries="@array/timeline"
+                app:layout_constraintBottom_toBottomOf="@+id/textInputLayout11"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/textInputLayout11"
+                app:layout_constraintTop_toTopOf="@+id/textInputLayout11" />
+
             <com.google.android.material.textfield.TextInputLayout
                 android:id="@+id/textInputLayout03"
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
@@ -217,7 +209,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_chainStyle="spread_inside"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/textInputLayout09">
+                app:layout_constraintTop_toBottomOf="@+id/textInputLayout11">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
