@@ -2,7 +2,7 @@
 <com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/cvTrainerClickDetail"
+    android:id="@+id/cvProjectsClickDetail"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginStart="16dp"
@@ -36,7 +36,7 @@
                 android:layout_height="match_parent">
 
                 <TextView
-                    android:id="@+id/tvTrainerExp"
+                    android:id="@+id/tvProjectsExp"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
@@ -112,15 +112,21 @@
                 android:layout_height="match_parent">
 
                 <TextView
-                    android:id="@+id/tvTrainerGender"
+                    android:id="@+id/tvProjectsGender"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:layout_marginBottom="16dp"
                     android:fontFamily="@font/montserrat"
+                    android:maxLines="1"
                     android:text="Amarasekara"
+                    android:ellipsize="end"
                     android:textColor="@color/cardBorderText"
                     android:textSize="12sp"
-                    app:layout_constraintStart_toEndOf="@+id/cardView12"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/textView57" />
 
                 <TextView
@@ -130,46 +136,17 @@
                     android:layout_marginStart="8dp"
                     android:layout_marginTop="16dp"
                     android:fontFamily="@font/montserrat_medium"
-                    android:text="User"
+                    android:text=" User Email"
                     android:textColor="@color/black"
                     android:textSize="14sp"
-                    app:layout_constraintStart_toEndOf="@+id/cardView12"
+                    app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
 
-                <com.google.android.material.card.MaterialCardView
-                    android:id="@+id/cardView12"
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:layout_marginStart="8dp"
-                    android:layout_marginTop="16dp"
-                    android:layout_marginBottom="16dp"
-                    android:alpha="0.5"
-                    app:cardBackgroundColor="@color/primary"
-                    app:cardCornerRadius="50dp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent">
-
-                    <androidx.constraintlayout.widget.ConstraintLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent">
-
-                        <ImageView
-                            android:id="@+id/imageView11"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            app:layout_constraintBottom_toBottomOf="parent"
-                            app:layout_constraintEnd_toEndOf="parent"
-                            app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toTopOf="parent"
-                            app:srcCompat="@drawable/baseline_person_24" />
-                    </androidx.constraintlayout.widget.ConstraintLayout>
-                </com.google.android.material.card.MaterialCardView>
             </androidx.constraintlayout.widget.ConstraintLayout>
         </com.google.android.material.card.MaterialCardView>
 
         <TextView
-            android:id="@+id/tvTrainerName"
+            android:id="@+id/tvProjectsName"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="12dp"
@@ -180,8 +157,8 @@
             android:textSize="18sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toEndOf="@+id/imgTrainerPic"
-            app:layout_constraintTop_toTopOf="@+id/imgTrainerPic" />
+            app:layout_constraintStart_toEndOf="@+id/imgProjectsPic"
+            app:layout_constraintTop_toTopOf="@+id/imgProjectsPic" />
 
         <TextView
             android:id="@+id/textView56"
@@ -192,14 +169,14 @@
             android:text="General Information"
             android:textColor="@color/black"
             android:textSize="16sp"
-            app:layout_constraintBottom_toBottomOf="@+id/imageView18"
-            app:layout_constraintEnd_toStartOf="@+id/imageView18"
+            app:layout_constraintBottom_toBottomOf="@+id/tvProjectsPend"
+            app:layout_constraintEnd_toStartOf="@+id/tvProjectsPend"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/imageView18" />
+            app:layout_constraintTop_toTopOf="@+id/tvProjectsPend" />
 
         <TextView
-            android:id="@+id/tvTrainerEmail"
+            android:id="@+id/tvProjectsEmail"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:layout_marginStart="12dp"
@@ -210,14 +187,14 @@
             android:text="lorem ispum is a dummy text generated forr fullfilling the text spaces sdadadasd asd adasd asd asd asd"
             android:textColor="@color/cardBorderText"
             android:textSize="12sp"
-            app:layout_constraintBottom_toBottomOf="@+id/imgTrainerPic"
+            app:layout_constraintBottom_toBottomOf="@+id/imgProjectsPic"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toEndOf="@+id/imgTrainerPic"
-            app:layout_constraintTop_toBottomOf="@+id/tvTrainerName" />
+            app:layout_constraintStart_toEndOf="@+id/imgProjectsPic"
+            app:layout_constraintTop_toBottomOf="@+id/tvProjectsName" />
 
         <ImageView
-            android:id="@+id/imageView18"
+            android:id="@+id/tvProjectsPend"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
@@ -229,7 +206,7 @@
             app:srcCompat="@drawable/baseline_edit_calendar_24" />
 
         <com.google.android.material.imageview.ShapeableImageView
-            android:id="@+id/imgTrainerPic"
+            android:id="@+id/imgProjectsPic"
             android:layout_width="70dp"
             android:layout_height="70dp"
             android:layout_marginStart="16dp"
@@ -261,7 +238,7 @@
             android:background="@color/cardBorderText"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imgTrainerPic" />
+            app:layout_constraintTop_toBottomOf="@+id/imgProjectsPic" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </com.google.android.material.card.MaterialCardView>

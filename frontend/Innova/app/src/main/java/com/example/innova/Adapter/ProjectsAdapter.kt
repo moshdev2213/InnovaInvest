@@ -4,6 +4,7 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
@@ -38,16 +39,38 @@ class ProjectsAdapter(
 }
 
 class BusAdapterViewHolder(private val view: View):RecyclerView.ViewHolder(view) {
-    fun bind(busItem: ProjectItem,busCardClicked:(ProjectItem)->Unit,context: Context){
-        val tvPriceBus = view.findViewById<TextView>(R.id.tvPriceBus)
-        val tvBusName = view.findViewById<TextView>(R.id.tvBusName)
-        val cvBusItemCard = view.findViewById<CardView>(R.id.cvBusItemCard)
+    fun bind(projectItem: ProjectItem,projectCardClicked:(ProjectItem)->Unit,context: Context){
+        val cvProjectsClickDetail = view.findViewById<CardView>(R.id.cvProjectsClickDetail)
+        val tvProjectsPend = view.findViewById<ImageView>(R.id.tvProjectsPend)
+        val tvProjectsExp = view.findViewById<TextView>(R.id.tvProjectsExp)
+        val tvProjectsGender = view.findViewById<TextView>(R.id.tvProjectsGender)
+        val tvProjectsEmail = view.findViewById<TextView>(R.id.tvProjectsEmail)
+        val tvProjectsName = view.findViewById<TextView>(R.id.tvProjectsName)
+        val imgProjectsPic = view.findViewById<ImageView>(R.id.imgProjectsPic)
 
-        tvPriceBus.text = "Rs.${busItem.price}"
-        tvBusName.text = busItem.name.capitalize()
+        //set image according to the keyword
+        val imageResource = when (projectItem.category.lowercase()) {
+            "cyber security" -> R.drawable.cyberg
+            "data analytics" -> R.drawable.dataninja
+            "ecommerce" -> R.drawable.ecomm
+            "finance" -> R.drawable.fintech
+            "game" -> R.drawable.gme
+            "healthcare" -> R.drawable.healthcat
+            "education" -> R.drawable.techedu
+            "virtual reality" -> R.drawable.vr
 
-        cvBusItemCard.setOnClickListener {
-            busCardClicked(busItem)
+            else -> R.drawable.propobaner // Default image in case of unknown keyword
+        }
+
+        imgProjectsPic.setImageResource(imageResource)
+
+        tvProjectsGender.text = projectItem.email
+        tvProjectsExp.text = projectItem.category.capitalize()
+        tvProjectsName.text = projectItem.title.capitalize()
+        tvProjectsEmail.text = projectItem.description
+
+        cvProjectsClickDetail.setOnClickListener {
+            projectCardClicked(projectItem)
         }
     }
 
