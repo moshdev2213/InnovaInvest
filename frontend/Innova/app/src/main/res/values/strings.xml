@@ -12,4 +12,11 @@
         <item>Ecommerce Evolution</item>
     </string-array>
 
+    <string-array name="timeline">
+        <item>3 months</item>
+        <item>4 months</item>
+        <item>6 months</item>
+        <item>12 months</item>
+    </string-array>
+
 </resources>
