@@ -35,7 +35,6 @@ class Home : AppCompatActivity() {
                 R.id.homie->replaceFrag(IndexFragment(),userObj)
                 R.id.project->replaceFrag(ProjectFragment(),userObj)
                 R.id.work->replaceFrag(WorkFragment(),userObj)
-//                R.id.add->replaceFrag(AddProjFragment(),userObj)
 
                 else->{
 
