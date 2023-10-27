@@ -4,6 +4,7 @@ import com.example.innova.Activity.AddProject
 import com.example.innova.EntityReq.AddProjectReq
 import com.example.innova.EntityRes.ProjTotalBudget
 import com.example.innova.EntityRes.ProjectsRes
+import com.example.innova.EntityRes.ProposalRes
 import retrofit2.Call
 import retrofit2.http.Body
 import retrofit2.http.GET
@@ -27,4 +28,10 @@ interface ProjectService {
     fun createNewProject(
         @Body addProjectReq: AddProjectReq
     ):Call<AddProjectReq>
+
+    @GET("/api/collections/proposal/records")
+    fun getRelevantInvestorForProj(
+        @Query("expand") expand: String,
+        @Query("filter") filter: String
+    ):Call<ProposalRes>
 }

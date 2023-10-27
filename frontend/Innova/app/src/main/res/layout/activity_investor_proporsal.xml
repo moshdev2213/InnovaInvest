@@ -20,7 +20,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:id="@+id/imageView9"
+        android:id="@+id/imgGoBack"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -30,6 +30,7 @@
         app:srcCompat="@drawable/baseline_arrow_back_24" />
 
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvDisInvestForProf"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:layout_marginTop="8dp"
