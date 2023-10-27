@@ -13,6 +13,7 @@ import androidx.annotation.RequiresApi
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.charmrides.RetrofitService.RetrofitService
+import com.example.innova.Activity.AllProjDetails
 import com.example.innova.Activity.ProjectDetail
 import com.example.innova.Adapter.ProjectsAdapter
 import com.example.innova.ApiService.ProjectService
@@ -66,7 +67,7 @@ class ProjectFragment : Fragment() {
         bundle.putSerializable("user", out)
         bundle.putSerializable("project", projectItem)
 
-        val intent = Intent(requireActivity(), ProjectDetail::class.java)
+        val intent = Intent(requireActivity(), AllProjDetails::class.java)
         intent.putExtras(bundle)
         startActivity(intent)
     }
