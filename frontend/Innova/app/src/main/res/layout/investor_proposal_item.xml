@@ -2,6 +2,7 @@
 <com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/cvMyProjInvestCard"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginStart="16dp"
@@ -17,7 +18,7 @@
         android:layout_height="match_parent">
 
         <TextView
-            android:id="@+id/textView56"
+            android:id="@+id/tvMyProjInvestName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
@@ -29,10 +30,10 @@
             app:layout_constraintBottom_toBottomOf="@+id/btnBackTrainer"
             app:layout_constraintHorizontal_chainStyle="spread_inside"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageView10" />
+            app:layout_constraintTop_toBottomOf="@+id/imgBannerInvester" />
 
         <TextView
-            android:id="@+id/textView58"
+            android:id="@+id/tvBudgetMyProJInvest"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
@@ -44,10 +45,10 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintHorizontal_chainStyle="spread_inside"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView56" />
+            app:layout_constraintTop_toBottomOf="@+id/tvMyProjInvestName" />
 
         <TextView
-            android:id="@+id/textView57"
+            android:id="@+id/tvMyProjInvestStatus"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginEnd="16dp"
@@ -55,13 +56,13 @@
             android:text="Approved"
             android:textColor="@color/black"
             android:textSize="16sp"
-            app:layout_constraintBottom_toBottomOf="@+id/textView58"
+            app:layout_constraintBottom_toBottomOf="@+id/tvBudgetMyProJInvest"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_chainStyle="spread_inside"
-            app:layout_constraintTop_toTopOf="@+id/textView56" />
+            app:layout_constraintTop_toTopOf="@+id/tvMyProjInvestName" />
 
         <com.google.android.material.imageview.ShapeableImageView
-            android:id="@+id/imageView10"
+            android:id="@+id/imgBannerInvester"
             android:layout_width="0dp"
             android:layout_height="150dp"
             android:scaleType="centerCrop"
