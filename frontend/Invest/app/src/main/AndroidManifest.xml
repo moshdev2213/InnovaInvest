@@ -15,6 +15,9 @@
         android:theme="@style/Theme.Invest"
         tools:targetApi="31">
         <activity
+            android:name=".Activity.AllProjDetails"
+            android:exported="false" />
+        <activity
             android:name=".Activity.ApplicationTracking"
             android:exported="false" />
         <activity
@@ -35,7 +38,18 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
+        <activity
+            android:name=".Activity.Success"
+            android:exported="false" />
+        <activity
+            android:name=".Activity.EditProfile"
+            android:exported="false" />
+        <activity
+            android:name=".Activity.MyProporsals"
+            android:exported="false" />
+        <activity
+            android:name=".Activity.SendProporsal"
+            android:exported="false" />
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />

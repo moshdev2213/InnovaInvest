@@ -30,7 +30,7 @@ class ProjectFragment : Fragment() {
 
     private lateinit var rvReportFrag: RecyclerView
     private lateinit var textView22: TextView
-    private lateinit var projectsAdapter: ProjectsAdapter
+    private lateinit var projectsAdapter:ProjectsAdapter
     private lateinit var out: UserRecord
     private lateinit var apiProgress: ApiProgress
     @RequiresApi(Build.VERSION_CODES.TIRAMISU)
@@ -74,12 +74,12 @@ class ProjectFragment : Fragment() {
         apiProgress = ApiProgress(requireContext())
         apiProgress.startProgressLoader()
 
-        val emailToFilter: String = out.record.email
-        val filterValue = "(email!=\"$emailToFilter\")"
+//        val emailToFilter: String = out.record.email
+//        val filterValue = "(email!=\"$emailToFilter\")"
 
         val retrofitService= RetrofitService()
         val getList =retrofitService.getRetrofit().create(ProjectService::class.java)
-        val call: Call<ProjectsRes> = getList.getProjNotUser(filterValue)
+        val call: Call<ProjectsRes> = getList.getProjAllUser()
 
         call.enqueue(object : Callback<ProjectsRes> {
             override fun onResponse(call: Call<ProjectsRes>, response: Response<ProjectsRes>) {

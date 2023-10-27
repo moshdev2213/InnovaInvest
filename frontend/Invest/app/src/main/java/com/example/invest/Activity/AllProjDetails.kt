@@ -79,7 +79,14 @@ class AllProjDetails : AppCompatActivity() {
         println(project?.created)
 
         cvBackBtnMyAllProj.setOnClickListener {
-            finish()
+            //the logic for the apply form
+            val bundle = Bundle()
+            bundle.putSerializable("user", out)
+            bundle.putSerializable("project", project)
+
+            val intent = Intent(this@AllProjDetails, SendProporsal::class.java)
+            intent.putExtras(bundle)
+            startActivity(intent)
         }
         imgBackBtn.setOnClickListener {
             finish()

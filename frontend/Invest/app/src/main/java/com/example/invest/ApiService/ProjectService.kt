@@ -20,6 +20,10 @@ interface ProjectService {
         @Query("filter")filter : String
     ): Call<ProjectsRes>
 
+    @GET("/api/collections/project/records")
+    fun getProjAllUser(
+    ): Call<ProjectsRes>
+
     @GET("/api/collections/proposal/records")
     fun getProjTotBudById(
         @Query("expand") expand: String,
