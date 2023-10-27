@@ -1,5 +1,6 @@
 package com.example.innova.Activity
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ImageView
@@ -13,6 +14,7 @@ import com.example.innova.Adapter.PrevProjAdapter
 import com.example.innova.Adapter.ProjSkillAadpter
 import com.example.innova.ApiService.ProjectService
 import com.example.innova.DialogAlerts.ApiProgress
+import com.example.innova.EntityReq.UpdateStatus
 import com.example.innova.EntityRes.ProjectItem
 import com.example.innova.EntityRes.Proposal
 import com.example.innova.EntityRes.ProposalRes
@@ -66,18 +68,21 @@ class InvestorDetail : AppCompatActivity() {
         }
         cvBackBtn.setOnClickListener {
             //implement the rject update here
-            finish()
+            statusToRejected()
         }
         cvBuyBtn.setOnClickListener {
             //implement the pnding status to approval
+            statusToAccepted()
         }
         tvProjPropoNameDetail.text = proposal?.email
         tvProjPropoTypeDetail.text = "Tel : ${proposal?.tel.toString()}"
         tvProjPropoFromDetail.text = "Rs ${proposal?.budget.toString()}"
         tvProjPropoToDetail.text = proposal?.expectedProfit.toString()
         tvMealDescLong.text = proposal?.comments?.capitalize()
-
     }
+
+
+
     private fun initRecycler(){
         rvPrevInvest = findViewById(R.id.rvPrevInvest)
         rvPrevInvest.layoutManager= LinearLayoutManager(this@InvestorDetail)
@@ -127,5 +132,87 @@ class InvestorDetail : AppCompatActivity() {
 
             }
         })
+    }
+    private fun statusToAccepted(){
+        apiProgress = ApiProgress(this@InvestorDetail)
+        apiProgress.startProgressLoader()
+
+        val retrofitService= RetrofitService()
+        val getList =retrofitService.getRetrofit().create(ProjectService::class.java)
+
+        if(proposal!=null){
+            val call: Call<Proposal> = getList.UpdateStatusToAccepted(
+                proposal!!.id,
+                UpdateStatus(proposal!!.email, proposal!!.forProject,"approved", proposal!!.tel)
+            )
+            call.enqueue(object : Callback<Proposal> {
+                override fun onResponse(call: Call<Proposal>, response: Response<Proposal>) {
+                    if(response.isSuccessful){
+                        if (response.body()!=null){
+                            val bundle = Bundle()
+                            bundle.putSerializable("user", out)
+                            val intent = Intent(this@InvestorDetail, Success::class.java)
+                            intent.putExtras(bundle)
+                            startActivity(intent)
+                            apiProgress.dismissProgressLoader()
+                            finish()
+                        }else{
+                            Toast.makeText(this@InvestorDetail,"Empty Data", Toast.LENGTH_SHORT).show()
+                            apiProgress.dismissProgressLoader()
+                        }
+                    }else{
+                        Toast.makeText(this@InvestorDetail,"Invalid response", Toast.LENGTH_SHORT).show()
+                        apiProgress.dismissProgressLoader()
+                    }
+                }
+                override fun onFailure(call: Call<Proposal>, t: Throwable) {
+                    Toast.makeText(this@InvestorDetail,"Server Error", Toast.LENGTH_SHORT).show()
+                    apiProgress.dismissProgressLoader()
+
+                }
+            })
+        }
+    }
+    private fun statusToRejected() {
+        apiProgress = ApiProgress(this@InvestorDetail)
+        apiProgress.startProgressLoader()
+
+        val retrofitService= RetrofitService()
+        val getList =retrofitService.getRetrofit().create(ProjectService::class.java)
+
+        if(proposal!=null){
+            val call: Call<Proposal> = getList.UpdateStatusToAccepted(
+                proposal!!.id,
+                UpdateStatus(proposal!!.email, proposal!!.forProject,"rejected", proposal!!.tel)
+            )
+            call.enqueue(object : Callback<Proposal> {
+                override fun onResponse(call: Call<Proposal>, response: Response<Proposal>) {
+                    if(response.isSuccessful){
+                        if (response.body()!=null){
+                            apiProgress.dismissProgressLoader()
+
+                            val bundle = Bundle()
+                            bundle.putSerializable("user", out)
+                            bundle.putSerializable("project", project)
+                            val intent = Intent(this@InvestorDetail, InvestorProporsal::class.java)
+                            intent.putExtras(bundle)
+                            startActivity(intent)
+                            finish()
+                        }else{
+                            Toast.makeText(this@InvestorDetail,"Empty Data", Toast.LENGTH_SHORT).show()
+                            apiProgress.dismissProgressLoader()
+                        }
+                    }else{
+                        Toast.makeText(this@InvestorDetail,"Invalid response", Toast.LENGTH_SHORT).show()
+                        apiProgress.dismissProgressLoader()
+                    }
+                }
+                override fun onFailure(call: Call<Proposal>, t: Throwable) {
+                    Toast.makeText(this@InvestorDetail,"Server Error", Toast.LENGTH_SHORT).show()
+                    apiProgress.dismissProgressLoader()
+
+                }
+            })
+        }
     }
 }

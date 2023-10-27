@@ -2,6 +2,7 @@ package com.example.innova.ApiService
 
 import com.example.innova.Activity.AddProject
 import com.example.innova.EntityReq.AddProjectReq
+import com.example.innova.EntityReq.UpdateStatus
 import com.example.innova.EntityRes.ProjTotalBudget
 import com.example.innova.EntityRes.ProjectsRes
 import com.example.innova.EntityRes.Proposal
@@ -9,7 +10,9 @@ import com.example.innova.EntityRes.ProposalRes
 import retrofit2.Call
 import retrofit2.http.Body
 import retrofit2.http.GET
+import retrofit2.http.PATCH
 import retrofit2.http.POST
+import retrofit2.http.Path
 import retrofit2.http.Query
 
 interface ProjectService {
@@ -42,4 +45,10 @@ interface ProjectService {
         @Query("fields") fields: String,
         @Query("filter") filter: String
     ):Call<ProposalRes>
+
+    @PATCH("/api/collections/proposal/records/{id}")
+    fun UpdateStatusToAccepted(
+        @Path("id") id:String,
+        @Body updateStatus: UpdateStatus
+    ):Call<Proposal>
 }

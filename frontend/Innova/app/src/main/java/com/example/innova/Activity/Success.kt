@@ -9,7 +9,6 @@ import com.example.innova.R
 
 class Success : AppCompatActivity() {
     private var out: UserRecord? = null
-    private lateinit var cvProceedToMyProjAct:CardView
     private lateinit var cvProceedToHomeAct:CardView
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -23,22 +22,12 @@ class Success : AppCompatActivity() {
         }
 
         cvProceedToHomeAct = findViewById(R.id.cvProceedToHomeAct)
-        cvProceedToMyProjAct = findViewById(R.id.cvProceedToMyProjAct)
 
         cvProceedToHomeAct.setOnClickListener {
             val bundle = Bundle()
             bundle.putSerializable("user", out)
 
             val intent = Intent(this@Success, Home::class.java)
-            intent.putExtras(bundle)
-            startActivity(intent)
-            finish()
-        }
-        cvProceedToMyProjAct.setOnClickListener {
-            val bundle = Bundle()
-            bundle.putSerializable("user", out)
-
-            val intent = Intent(this@Success, MyProporsals::class.java)
             intent.putExtras(bundle)
             startActivity(intent)
             finish()
