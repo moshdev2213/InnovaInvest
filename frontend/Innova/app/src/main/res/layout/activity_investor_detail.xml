@@ -149,7 +149,7 @@
                         app:layout_constraintTop_toTopOf="parent" />
 
                     <TextView
-                        android:id="@+id/tvTrainFromDetail"
+                        android:id="@+id/tvProjPropoFromDetail"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="16dp"
@@ -203,7 +203,7 @@
                         app:layout_constraintTop_toTopOf="parent" />
 
                     <TextView
-                        android:id="@+id/tvTrainToDetail"
+                        android:id="@+id/tvProjPropoToDetail"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="16dp"
@@ -239,7 +239,7 @@
                     android:layout_height="match_parent">
 
                     <TextView
-                        android:id="@+id/tvTrainNameDetail"
+                        android:id="@+id/tvProjPropoNameDetail"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="16dp"
@@ -254,7 +254,7 @@
                         app:layout_constraintTop_toBottomOf="@+id/imgBannerMealDetail" />
 
                     <TextView
-                        android:id="@+id/tvTrainTypeDetail"
+                        android:id="@+id/tvProjPropoTypeDetail"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="16dp"
@@ -262,9 +262,9 @@
                         android:text="Tel : 0987856443"
                         android:textColor="@color/cardBorderText"
                         android:textSize="16sp"
-                        app:layout_constraintBottom_toBottomOf="@+id/tvTrainNameDetail"
+                        app:layout_constraintBottom_toBottomOf="@+id/tvProjPropoNameDetail"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintTop_toTopOf="@+id/tvTrainNameDetail" />
+                        app:layout_constraintTop_toTopOf="@+id/tvProjPropoNameDetail" />
 
                     <com.google.android.material.imageview.ShapeableImageView
                         android:id="@+id/imgBannerMealDetail"
