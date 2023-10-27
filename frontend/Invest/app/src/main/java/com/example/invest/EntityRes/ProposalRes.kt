@@ -32,5 +32,7 @@ data class ForProject(
     val id: String,
     val skillsRequired: String,
     val timeLine: String,
-    val title: String
+    val title: String,
+    val updated: String,
+    val created: String
 ):Serializable

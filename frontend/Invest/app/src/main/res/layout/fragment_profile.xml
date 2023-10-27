@@ -13,55 +13,6 @@
         android:visibility="visible">
 
         <com.google.android.material.card.MaterialCardView
-            android:id="@+id/cvBrowseInvnt"
-            android:layout_width="0dp"
-            android:layout_height="70dp"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="16dp"
-            android:clickable="true"
-            app:cardBackgroundColor="@color/cardBorder"
-            app:cardCornerRadius="10dp"
-            app:cardElevation="0dp"
-            app:cardMaxElevation="0dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/cvBrowsePropo">
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent">
-
-                <TextView
-                    android:id="@+id/textView24"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginEnd="8dp"
-                    android:fontFamily="@font/montserrat_medium"
-                    android:text="Browse My Investments"
-                    android:textColor="@color/black"
-                    android:textSize="18sp"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toStartOf="@+id/textView15"
-                    app:layout_constraintHorizontal_bias="0.5"
-                    app:layout_constraintHorizontal_chainStyle="packed"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <ImageView
-                    android:id="@+id/imageView16"
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    android:layout_marginEnd="16dp"
-                    android:src="@drawable/baseline_payments_24"
-                    app:layout_constraintBottom_toBottomOf="@+id/textView24"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="@+id/textView24" />
-            </androidx.constraintlayout.widget.ConstraintLayout>
-        </com.google.android.material.card.MaterialCardView>
-
-        <com.google.android.material.card.MaterialCardView
             android:id="@+id/cvDigitalTokenUser"
             android:layout_width="0dp"
             android:layout_height="70dp"
@@ -163,7 +114,7 @@
             app:cardMaxElevation="0dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/cvBrowseInvnt">
+            app:layout_constraintTop_toBottomOf="@+id/cvBrowsePropo">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"

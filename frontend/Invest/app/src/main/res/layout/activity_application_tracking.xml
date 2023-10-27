@@ -42,7 +42,7 @@
                 app:layout_constraintTop_toTopOf="@+id/imageView15" />
 
             <TextView
-                android:id="@+id/textView21"
+                android:id="@+id/ntRevDate"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
@@ -58,7 +58,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/textView24" />
 
             <TextView
-                android:id="@+id/textView22"
+                android:id="@+id/entRevTime"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
@@ -135,7 +135,7 @@
                 app:layout_constraintTop_toTopOf="@+id/imageView15" />
 
             <TextView
-                android:id="@+id/textView21"
+                android:id="@+id/propSubmitDate"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
@@ -151,7 +151,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/textView24" />
 
             <TextView
-                android:id="@+id/textView22"
+                android:id="@+id/propSubTime"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
@@ -193,7 +193,7 @@
     </com.google.android.material.card.MaterialCardView>
 
     <com.google.android.material.card.MaterialCardView
-        android:id="@+id/cvProceedTo"
+        android:id="@+id/cvProceedToHomeTrack"
         android:layout_width="0dp"
         android:layout_height="70dp"
         android:layout_marginStart="16dp"
@@ -267,7 +267,7 @@
                 app:layout_constraintTop_toTopOf="@+id/imageView15" />
 
             <TextView
-                android:id="@+id/textView21"
+                android:id="@+id/entAppDate"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
@@ -283,7 +283,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/textView24" />
 
             <TextView
-                android:id="@+id/textView22"
+                android:id="@+id/entAppTime"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
@@ -351,13 +351,4 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageView
-        android:id="@+id/imgBackBtn2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:src="@drawable/baseline_arrow_back_24"
-        app:layout_constraintBottom_toBottomOf="@+id/textView20"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/textView20" />
 </androidx.constraintlayout.widget.ConstraintLayout>
