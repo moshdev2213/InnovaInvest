@@ -132,7 +132,7 @@ class EditProfile : AppCompatActivity() {
         }
     }
     private fun fetchGetAcceptedCount(){
-        val filterValue = "(email=\"${out?.record?.email}\" && status='accepted')"
+        val filterValue = "(email=\"${out?.record?.email}\" && status='approved')"
         val retrofitService= RetrofitService()
         val getList =retrofitService.getRetrofit().create(UserService::class.java)
         if(out?.record?.id?.isNotEmpty() == true){
