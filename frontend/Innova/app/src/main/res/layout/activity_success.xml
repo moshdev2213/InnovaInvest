@@ -7,7 +7,7 @@
     tools:context=".Activity.Success">
 
     <com.google.android.material.card.MaterialCardView
-        android:id="@+id/cvProceedTo"
+        android:id="@+id/cvProceedToHomeAct"
         android:layout_width="0dp"
         android:layout_height="70dp"
         android:layout_marginStart="16dp"
@@ -20,7 +20,7 @@
         app:cardMaxElevation="0dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cvProceedTodlt">
+        app:layout_constraintTop_toBottomOf="@+id/cvProceedToMyProjAct">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -46,7 +46,7 @@
     </com.google.android.material.card.MaterialCardView>
 
     <com.google.android.material.card.MaterialCardView
-        android:id="@+id/cvProceedTodlt"
+        android:id="@+id/cvProceedToMyProjAct"
         android:layout_width="0dp"
         android:layout_height="70dp"
         android:layout_marginStart="16dp"
@@ -72,7 +72,7 @@
                 android:layout_marginStart="16dp"
                 android:layout_marginEnd="16dp"
                 android:fontFamily="@font/montserrat_medium"
-                android:text="Go Back"
+                android:text="See Your Projects"
                 android:textColor="@color/primary"
                 android:textSize="18sp"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -113,22 +113,12 @@
         app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
     <ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/baseline_arrow_back_24" />
-
-    <ImageView
         android:id="@+id/imageView5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="48dp"
+        android:layout_marginTop="96dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView3"
+        app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/sucbanner" />
 </androidx.constraintlayout.widget.ConstraintLayout>

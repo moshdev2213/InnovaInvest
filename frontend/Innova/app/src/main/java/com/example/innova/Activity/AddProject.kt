@@ -92,7 +92,7 @@ class AddProject : AppCompatActivity() {
                             val bundle = Bundle()
                             bundle.putSerializable("user", out)
 
-                            val intent = Intent(this@AddProject, MyProporsals::class.java)
+                            val intent = Intent(this@AddProject, Success::class.java)
                             intent.putExtras(bundle)
                             startActivity(intent)
                             finish()
