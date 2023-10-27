@@ -19,7 +19,5 @@ data class Record(
     val created: String,
     val updated: String,
     val name: String,
-    val avatar: String,
-    val role: String,
     val telephone: Int
 ):Serializable
