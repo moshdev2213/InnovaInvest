@@ -2,14 +2,14 @@
     <string name="app_name">Innova</string>
 
     <string-array name="pro_category">
-        <item>HealthTech Innovators</item>
-        <item>DataNinja Analytics</item>
-        <item>VR Xperience</item>
-        <item>GameChanger Studios</item>
-        <item>TechSavvy Edu</item>
-        <item>CyberGuard Solutions</item>
-        <item>Fintech Pioneers</item>
-        <item>Ecommerce Evolution</item>
+        <item>healthcare</item>
+        <item>data analytics</item>
+        <item>virtual reality</item>
+        <item>education</item>
+        <item>game</item>
+        <item>cyber security</item>
+        <item>finance</item>
+        <item>ecommerce</item>
     </string-array>
 
     <string-array name="timeline">

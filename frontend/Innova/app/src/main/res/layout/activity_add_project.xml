@@ -21,7 +21,7 @@
             android:layout_height="match_parent">
 
             <com.google.android.material.card.MaterialCardView
-                android:id="@+id/materialCardView2"
+                android:id="@+id/cvAddProj"
                 android:layout_width="0dp"
                 android:layout_height="50dp"
                 android:layout_marginStart="32dp"
@@ -35,7 +35,7 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toEndOf="@+id/materialCardView6"
+                app:layout_constraintStart_toEndOf="@+id/cvCancelAddProj"
                 app:layout_constraintTop_toTopOf="parent">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
@@ -63,7 +63,7 @@
             </com.google.android.material.card.MaterialCardView>
 
             <com.google.android.material.card.MaterialCardView
-                android:id="@+id/materialCardView6"
+                android:id="@+id/cvCancelAddProj"
                 android:layout_width="0dp"
                 android:layout_height="50dp"
                 android:layout_marginStart="16dp"
@@ -73,7 +73,7 @@
                 app:cardCornerRadius="10dp"
                 app:cardElevation="2dp"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@+id/materialCardView2"
+                app:layout_constraintEnd_toStartOf="@+id/cvAddProj"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintHorizontal_chainStyle="spread_inside"
                 app:layout_constraintStart_toStartOf="parent"
@@ -155,21 +155,23 @@
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="16dp"
                 android:hint="Budget"
+                app:prefixText="Rs"
                 app:endIconMode="clear_text"
-                app:layout_constraintEnd_toStartOf="@+id/spinnerSeatSelect2"
+                app:layout_constraintEnd_toStartOf="@+id/spinnerTimelineProj"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintHorizontal_chainStyle="spread_inside"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textInputLayout06">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etBudgetProj"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:inputType="text" />
+                    android:inputType="number" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <Spinner
-                android:id="@+id/spinnerSeatSelect"
+                android:id="@+id/spinnerProjCatSelect"
                 android:layout_width="0dp"
                 android:layout_height="50dp"
                 android:layout_marginStart="16dp"
@@ -182,7 +184,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/imageView34" />
 
             <Spinner
-                android:id="@+id/spinnerSeatSelect2"
+                android:id="@+id/spinnerTimelineProj"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
                 android:layout_marginEnd="16dp"
@@ -212,6 +214,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/textInputLayout11">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etProjDesc"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:gravity="top"
@@ -236,6 +239,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/textInputLayout3">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etSkillsProjRequired"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="text" />
@@ -252,12 +256,13 @@
                 android:hint="Project Title"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/spinnerSeatSelect">
+                app:layout_constraintTop_toBottomOf="@+id/spinnerProjCatSelect">
 
                 <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etProjTitle"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:enabled="false" />
+                    android:enabled="true" />
             </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.imageview.ShapeableImageView
