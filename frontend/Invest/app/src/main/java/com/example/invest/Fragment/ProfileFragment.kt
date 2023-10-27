@@ -32,7 +32,7 @@ class ProfileFragment : Fragment() {
         out = arguments?.getSerializable("user", UserRecord::class.java)!!
 
         cvBrowsePropo = view.findViewById(R.id.cvBrowsePropo)
-        cvBrowseInvnt = view.findViewById(R.id.cvBrowseInvnt)
+//        cvBrowseInvnt = view.findViewById(R.id.cvBrowseInvnt)
         cvDigitalTokenUser = view.findViewById(R.id.cvDigitalTokenUser)
         cvProceedTodlt = view.findViewById(R.id.cvProceedTodlt)
 
@@ -44,14 +44,7 @@ class ProfileFragment : Fragment() {
             intent.putExtras(bundle)
             startActivity(intent)
         }
-        cvBrowseInvnt.setOnClickListener {
-//            val bundle = Bundle()
-//            bundle.putSerializable("user", out)
-//
-//            val intent = Intent(requireActivity(), MyProporsals::class.java)
-//            intent.putExtras(bundle)
-//            startActivity(intent)
-        }
+
         cvDigitalTokenUser.setOnClickListener {
             val bundle = Bundle()
             bundle.putSerializable("user", out)
