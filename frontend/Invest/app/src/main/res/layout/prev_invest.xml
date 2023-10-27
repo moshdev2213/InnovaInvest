@@ -29,7 +29,7 @@
         app:layout_constraintStart_toStartOf="parent">
 
         <TextView
-            android:id="@+id/textView24"
+            android:id="@+id/tvTheRelevantame"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
@@ -52,7 +52,7 @@
             app:layout_constraintBottom_toBottomOf="@+id/imageView37"
             app:layout_constraintEnd_toStartOf="@+id/imageView37"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView24" />
+            app:layout_constraintTop_toBottomOf="@+id/tvTheRelevantame" />
 
         <ImageView
             android:id="@+id/imageView37"

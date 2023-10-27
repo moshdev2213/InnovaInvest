@@ -31,7 +31,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:fontFamily="@font/montserrat"
-            android:text="welcome Invester"
+            android:text="welcome Entrepreneur"
             android:textColor="@color/cardBorderText"
             android:textSize="16sp"
             app:layout_constraintStart_toStartOf="parent"
@@ -195,7 +195,7 @@
                             app:shapeAppearance="@style/roundedImageView" />
 
                         <Button
-                            android:id="@+id/btnSeeAct"
+                            android:id="@+id/btnSeeWrk"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="8dp"
@@ -323,7 +323,7 @@
                         android:layout_height="match_parent">
 
                         <Button
-                            android:id="@+id/btnBrowseReserves"
+                            android:id="@+id/btnBrowseProjects02"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginEnd="8dp"
@@ -377,7 +377,7 @@
                 </com.google.android.material.card.MaterialCardView>
 
                 <Button
-                    android:id="@+id/btnShowTrains"
+                    android:id="@+id/btnShowProjects"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
