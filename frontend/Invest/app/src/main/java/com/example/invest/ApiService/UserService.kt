@@ -16,6 +16,17 @@ interface UserService {
         @Path("id") id:String
     ): Call<Record>
 
+    @GET("/api/collections/investor/records/{id}")
+    fun getInvestorDetails(
+        @Path("id") id:String
+    ): Call<Record>
+    @PATCH("/api/collections/investor/records/{id}")
+    fun updateInvestorData(
+        @Path("id")id:String,
+        @Body updateUser: UpdateUser
+    ):Call<Record>
+
+
     @PATCH("/api/collections/users/records/{id}")
     fun updateUserData(
         @Path("id")id:String,
