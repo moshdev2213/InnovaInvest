@@ -52,6 +52,7 @@ class MyProporsals : AppCompatActivity() {
             val intent = Intent(this@MyProporsals, AddProject::class.java)
             intent.putExtras(bundle)
             startActivity(intent)
+            finish()
         }
         imgBackToProfileFromMy.setOnClickListener {
             finish()
