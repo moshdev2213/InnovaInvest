@@ -1,9 +1,13 @@
 package com.example.innova.ApiService
 
+import com.example.innova.Activity.AddProject
+import com.example.innova.EntityReq.AddProjectReq
 import com.example.innova.EntityRes.ProjTotalBudget
 import com.example.innova.EntityRes.ProjectsRes
 import retrofit2.Call
+import retrofit2.http.Body
 import retrofit2.http.GET
+import retrofit2.http.POST
 import retrofit2.http.Query
 
 interface ProjectService {
@@ -18,4 +22,9 @@ interface ProjectService {
         @Query("fields") fields: String
 //        @Query("filter") filter: String
         ): Call<ProjTotalBudget>
+
+    @POST("/api/collections/project/records")
+    fun createNewProject(
+        @Body addProjectReq: AddProjectReq
+    ):Call<AddProjectReq>
 }
