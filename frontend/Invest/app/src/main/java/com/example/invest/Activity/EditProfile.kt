@@ -74,7 +74,7 @@ class EditProfile : AppCompatActivity() {
         val retrofitService= RetrofitService()
         val getList =retrofitService.getRetrofit().create(UserService::class.java)
         if(out?.record?.id?.isNotEmpty() == true){
-            val call: Call<Record> = getList.getUserDetails(out?.record?.id!!)
+            val call: Call<Record> = getList.getInvestorDetails(out?.record?.id!!)
 
             call.enqueue(object : Callback<Record> {
                 override fun onResponse(call: Call<Record>, response: Response<Record>) {
@@ -103,7 +103,7 @@ class EditProfile : AppCompatActivity() {
     }
     private fun fetchGetPendingCount(){
 
-        val filterValue = "(email=\"${out?.record?.email}\" && status='rejected')"
+        val filterValue = "(email=\"${out?.record?.email}\" && status='pending')"
 
         val retrofitService= RetrofitService()
         val getList =retrofitService.getRetrofit().create(UserService::class.java)
@@ -130,7 +130,7 @@ class EditProfile : AppCompatActivity() {
         }
     }
     private fun fetchGetAcceptedCount(){
-        val filterValue = "(email=\"${out?.record?.email}\" && status='accepted')"
+        val filterValue = "(email=\"${out?.record?.email}\" && status='approved')"
         val retrofitService= RetrofitService()
         val getList =retrofitService.getRetrofit().create(UserService::class.java)
         if(out?.record?.id?.isNotEmpty() == true){
@@ -170,7 +170,7 @@ class EditProfile : AppCompatActivity() {
             val retrofitService= RetrofitService()
             val getList =retrofitService.getRetrofit().create(UserService::class.java)
             if(out?.record?.id?.isNotEmpty() == true){
-                val call: Call<Record> = getList.updateUserData(
+                val call: Call<Record> = getList.updateInvestorData(
                     out?.record?.id!!,
                     UpdateUser(
                         tel,name,description

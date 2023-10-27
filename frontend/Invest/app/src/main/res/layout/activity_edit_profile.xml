@@ -169,13 +169,26 @@
                     android:layout_height="match_parent">
 
                     <TextView
+                        android:id="@+id/textView9"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="8dp"
+                        android:fontFamily="@font/montserrat"
+                        android:text="Projects"
+                        android:textColor="@color/black"
+                        android:textSize="16sp"
+                        app:layout_constraintBottom_toBottomOf="@+id/tvAcceptedCount"
+                        app:layout_constraintStart_toEndOf="@+id/tvAcceptedCount"
+                        app:layout_constraintTop_toTopOf="@+id/tvAcceptedCount" />
+
+                    <TextView
                         android:id="@+id/textView4"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="16dp"
                         android:layout_marginTop="16dp"
                         android:fontFamily="@font/montserrat"
-                        android:text="Applied"
+                        android:text="Accepted"
                         android:textColor="@color/black"
                         android:textSize="16sp"
                         app:layout_constraintStart_toStartOf="parent"
@@ -226,7 +239,7 @@
                         android:layout_marginStart="16dp"
                         android:layout_marginTop="16dp"
                         android:fontFamily="@font/montserrat"
-                        android:text="Accepted"
+                        android:text="Pending"
                         android:textColor="@color/black"
                         android:textSize="16sp"
                         app:layout_constraintStart_toStartOf="parent"
