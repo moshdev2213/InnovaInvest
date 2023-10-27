@@ -21,5 +21,5 @@ data class Record(
     val name: String,
     val avatar: String,
     val role: String,
-    val telephone: Int
+    val telephone: String
 ):Serializable
