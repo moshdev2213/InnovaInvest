@@ -19,7 +19,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/cvBackBtn">
+        app:layout_constraintStart_toEndOf="@+id/cvBackBtnMyProj">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -81,20 +81,22 @@
                     android:layout_height="match_parent">
 
                     <TextView
-                        android:id="@+id/tvTrainNameDetail"
+                        android:id="@+id/tvProjNameDetail"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginStart="16dp"
+                        android:layout_marginStart="8dp"
                         android:layout_marginTop="8dp"
+                        android:layout_marginEnd="8dp"
                         android:fontFamily="@font/montserrat_bold"
                         android:text="TechSavy"
                         android:textColor="@color/primary"
                         android:textSize="20sp"
+                        app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@+id/imgBannerMealDetail" />
+                        app:layout_constraintTop_toBottomOf="@+id/imgBannerProjDetail" />
 
                     <TextView
-                        android:id="@+id/tvTrainTypeDetail"
+                        android:id="@+id/tvProjTypeDetail"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="16dp"
@@ -102,9 +104,10 @@
                         android:text="Vishnu"
                         android:textColor="@color/cardBorderText"
                         android:textSize="16sp"
-                        app:layout_constraintBottom_toBottomOf="@+id/tvTrainNameDetail"
+                        android:visibility="gone"
+                        app:layout_constraintBottom_toBottomOf="@+id/tvProjNameDetail"
                         app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintTop_toTopOf="@+id/tvTrainNameDetail" />
+                        app:layout_constraintTop_toTopOf="@+id/tvProjNameDetail" />
 
                     <com.google.android.material.card.MaterialCardView
                         android:id="@+id/materialCardView13"
@@ -118,14 +121,14 @@
                         app:layout_constraintEnd_toStartOf="@+id/materialCardView12"
                         app:layout_constraintHorizontal_bias="0.5"
                         app:layout_constraintStart_toEndOf="@+id/materialCardView11"
-                        app:layout_constraintTop_toBottomOf="@+id/tvTrainNameDetail">
+                        app:layout_constraintTop_toBottomOf="@+id/tvProjNameDetail">
 
                         <androidx.constraintlayout.widget.ConstraintLayout
                             android:layout_width="match_parent"
                             android:layout_height="match_parent">
 
                             <TextView
-                                android:id="@+id/tvMealFat"
+                                android:id="@+id/tvProjFat"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginStart="16dp"
@@ -160,7 +163,7 @@
                             android:layout_height="match_parent">
 
                             <TextView
-                                android:id="@+id/tvMealCarb"
+                                android:id="@+id/tvProjCarb"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_marginStart="16dp"
@@ -177,7 +180,7 @@
                     </com.google.android.material.card.MaterialCardView>
 
                     <com.google.android.material.imageview.ShapeableImageView
-                        android:id="@+id/imgBannerMealDetail"
+                        android:id="@+id/imgBannerProjDetail"
                         android:layout_width="0dp"
                         android:layout_height="150dp"
                         android:scaleType="centerInside"
@@ -227,15 +230,15 @@
             </com.google.android.material.card.MaterialCardView>
 
             <TextView
-                android:id="@+id/tvMealDescLong"
+                android:id="@+id/tvProjDescLong"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="8dp"
                 android:layout_marginEnd="16dp"
                 android:alpha="0.5"
                 android:fontFamily="@font/montserrat"
-                android:text="lorem ipsum is a dummy text generated to fill the dummy areeas in order to fill the gaps, lorem ipsum is a dummy text generated to fill the dummy areeas in order to fill the gaps.lorem ipsum is a dummy text generated to fill the dummy areeas in order to fill the gaps, lorem ipsum is a dummy text generated to fill the dummy areeas in order to fill the gaps.lorem ipsum is a dummy text generated to fill the dummy areeas in order to fill the gaps, lorem ipsum is a dummy text generated to fill the dummy areeas in order to fill the gaps.lorem ipsum is a dummy text generated to fill the dummy areeas in order to fill the gaps, lorem ipsum is a dummy text generated to fill the dummy areeas in order to fill the gaps.lorem ipsum is a dummy text generated to fill the dummy areeas in order to fill the gaps, lorem ipsum is a dummy text generated to fill the dummy areeas in order to fill the gaps.lorem ipsum is a dummy text generated to fill the dummy areeas in order to fill the gaps, lorem ipsum is a dummy text generated to fill the dummy areeas in order to fill the gaps"
+                android:text="dsadadasddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddd"
                 android:textColor="@color/black"
                 android:textSize="14sp"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -250,13 +253,29 @@
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="16dp"
                 android:fontFamily="@font/montserrat_medium"
-                android:text="Description areas of the Investor :"
+                android:text="Description areas of the Project :"
                 android:textColor="@color/black"
                 android:textSize="16sp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.087"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/cardView10" />
+
+            <TextView
+                android:id="@+id/textView21"
+                android:layout_width="0dp"
+                android:layout_height="25dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:fontFamily="@font/montserrat_medium"
+                android:text="Skils Required for the Project :"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.087"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvProjDescLong" />
 
             <androidx.cardview.widget.CardView
                 android:id="@+id/cardView10"
@@ -297,7 +316,7 @@
                         app:layout_constraintTop_toTopOf="parent" />
 
                     <TextView
-                        android:id="@+id/tvTrainFromDetail"
+                        android:id="@+id/tvProjFromDetail"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="16dp"
@@ -351,7 +370,7 @@
                         app:layout_constraintTop_toTopOf="parent" />
 
                     <TextView
-                        android:id="@+id/tvTrainToDetail"
+                        android:id="@+id/tvProjToDetail"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="16dp"
@@ -367,6 +386,17 @@
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
             </androidx.cardview.widget.CardView>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvProjSkillSet"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/textView21"
+                tools:listitem="@layout/prev_invest" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
@@ -395,7 +425,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <com.google.android.material.card.MaterialCardView
-        android:id="@+id/cvBackBtn"
+        android:id="@+id/cvBackBtnMyProj"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
