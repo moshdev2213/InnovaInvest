@@ -9,8 +9,10 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.annotation.RequiresApi
 import androidx.cardview.widget.CardView
+import com.example.innova.Activity.EditProfile
 import com.example.innova.Activity.MyProporsals
 import com.example.innova.Activity.ProjectDetail
+import com.example.innova.Activity.SignIn
 import com.example.innova.EntityRes.UserRecord
 import com.example.innova.R
 
@@ -18,6 +20,8 @@ import com.example.innova.R
 class ProfileFragment : Fragment() {
     private var out: UserRecord? = null
     private lateinit var cvProceedToMyProj:CardView
+    private lateinit var cvDigitalTokenUser:CardView
+    private lateinit var cvProceedTodlt:CardView
 
     @RequiresApi(Build.VERSION_CODES.TIRAMISU)
     override fun onCreateView(
@@ -29,6 +33,8 @@ class ProfileFragment : Fragment() {
         out = arguments?.getSerializable("user", UserRecord::class.java)!!
 
         cvProceedToMyProj = view.findViewById(R.id.cvProceedToMyProj)
+        cvDigitalTokenUser = view.findViewById(R.id.cvDigitalTokenUser)
+        cvProceedTodlt = view.findViewById(R.id.cvProceedTodlt)
 
         cvProceedToMyProj.setOnClickListener {
             val bundle = Bundle()
@@ -38,7 +44,19 @@ class ProfileFragment : Fragment() {
             intent.putExtras(bundle)
             startActivity(intent)
         }
+        cvDigitalTokenUser.setOnClickListener {
+            val bundle = Bundle()
+            bundle.putSerializable("user", out)
 
+            val intent = Intent(requireActivity(), EditProfile::class.java)
+            intent.putExtras(bundle)
+            startActivity(intent)
+        }
+        cvProceedTodlt.setOnClickListener {
+            val intent = Intent(requireActivity(), SignIn::class.java)
+            startActivity(intent)
+            requireActivity().finish()
+        }
         return view
     }
 }

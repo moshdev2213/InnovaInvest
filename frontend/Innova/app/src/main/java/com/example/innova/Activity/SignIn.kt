@@ -76,6 +76,7 @@ class SignIn : AppCompatActivity() {
                 override fun onFailure(call: Call<UserRecord>, t: Throwable) {
                     Toast.makeText(this@SignIn, "Server Error", Toast.LENGTH_SHORT).show()
                     progressLoader.dismissProgressLoader()
+                    println(t.message)
                 }
             })
             count=0;

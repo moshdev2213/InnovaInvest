@@ -81,8 +81,6 @@ class InvestorDetail : AppCompatActivity() {
         tvMealDescLong.text = proposal?.comments?.capitalize()
     }
 
-
-
     private fun initRecycler(){
         rvPrevInvest = findViewById(R.id.rvPrevInvest)
         rvPrevInvest.layoutManager= LinearLayoutManager(this@InvestorDetail)
