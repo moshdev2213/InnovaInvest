@@ -19,5 +19,5 @@ data class Record(
     val created: String,
     val updated: String,
     val name: String,
-    val telephone: Int
+    val telephone: String
 ):Serializable
