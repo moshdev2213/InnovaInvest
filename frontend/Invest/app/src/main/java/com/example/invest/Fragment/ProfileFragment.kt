@@ -54,7 +54,8 @@ class ProfileFragment : Fragment() {
             startActivity(intent)
         }
         cvProceedTodlt.setOnClickListener {
-            val intent = Intent(requireActivity(), SignIn::class.java)
+            val intent = Intent(requireContext(), SignIn::class.java)
+            intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
             startActivity(intent)
             requireActivity().finish()
         }
